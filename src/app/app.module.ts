@@ -9,18 +9,21 @@ import { AppComponent } from './app.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-
+import { MatDialogModule } from '@angular/material/dialog';
 
 import 'hammerjs';
 import { MenuComponent } from './menu/menu.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
 
 import { DishService } from './services/dish.service';
+import { PromotionService } from './services/promotion.service';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
+import { LeaderService } from './services/leader.service';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -33,7 +36,8 @@ import { ContactComponent } from './contact/contact.component';
     FooterComponent,
     AboutComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -44,9 +48,17 @@ import { ContactComponent } from './contact/contact.component';
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule
   ],
-  providers: [DishService],
+  providers: [
+    DishService,
+    PromotionService,
+    LeaderService
+  ],
+  entryComponents: [
+    LoginComponent
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
